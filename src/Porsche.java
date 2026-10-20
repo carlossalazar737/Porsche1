@@ -1,27 +1,51 @@
 public class Porsche {
     private int potencia;
     private double velocidad;
-    public void setPotencia(int potencia){
-        if(potencia > 0)
-        this.potencia = potencia;
+    private static int numCarros = 0;
+    private static final double IVA = 0.15;
+    private static final double precio = 125000;
+
+    public Porsche(int potencia, double velocidad){
+        setPotencia(potencia);
+        setvelocidad(velocidad);
+        numCarros++;
     }
-    public void setVelocidad(double velocidad){
-        if(velocidad < 0)
-            velocidad = 0;
-        this.velocidad = velocidad;
+    public Porsche(){
+        numCarros++;
+    }
+    public void setPotencia(int potencia) {
+            if (potencia > 0)
+                this.potencia = potencia;
     }
 
+    public void setvelocidad(double velocidad) {
+            if (velocidad < 0){
+                velocidad = 0;
+            this.velocidad = velocidad;
+            }
+    }
+
+    public int getPotencia() {
+        return potencia;
+    }
+
+    public double getVelocidad() {
+        return velocidad;
+    }
+
+    public static int getNumCarros() {
+        return numCarros;
+    }
+    public static double getIVA(){
+        return IVA;
+    }
+    public double calcularprecioFinal(){
+        return precio + (precio*IVA);
+    }
     public void acelerar(){
         velocidad+=potencia;
     }
-    public void mostrarinformacion(){
-        System.out.println("La potencia del carro es: " + potencia + " y la velocidad es: " + velocidad);
-    }
     void frenar(){
-        velocidad/=potencia;
+        velocidad/= 2;
     }
-    public void Frenar(){
-        System.out.println("Freno y quedo a una velocidad de: "+ velocidad );
-    }
-
 }

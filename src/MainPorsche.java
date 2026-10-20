@@ -1,14 +1,16 @@
 public class MainPorsche {
-    public void main(String[] args){
-            Porsche C1= new Porsche();
-            Porsche C2= new Porsche();
-            C1.setPotencia(6);
-            C1.setVelocidad(-100);
-            C2.setPotencia(3);
-            C2.setVelocidad(180);
-            C1.mostrarinformacion();
+    static void main(){
+            System.out.println("El numero de objetos de tipo Porsche creados son: "+ Porsche.getNumCarros());
+            Porsche C1= new Porsche(2,60);
+            Porsche C2= new Porsche(-5,-100);
+            Porsche C3 = new Porsche();
+            System.out.println("El numero de objetos de tipo Porsche creados son: "+ Porsche.getNumCarros());
+            System.out.println("El precio de venta publico del Porsche es: "+ C1.calcularprecioFinal());
+            System.out.println("La potencia del Porsche es: "+ C1.getPotencia()+"La velocidad del Porsche es: " + C1.getVelocidad());
+            System.out.println("La potencia del Porsche es: "+ C2.getPotencia()+"La velocidad del Porsche es: " + C2.getVelocidad());
+            System.out.println("La potencia del Porsche es: "+ C3.getPotencia()+"La velocidad del Porsche es: " + C3.getVelocidad());
+            C1.acelerar();
+            C1.acelerar();
             C1.frenar();
-            C1.Frenar();
-            C2.mostrarinformacion();
     }
 }
